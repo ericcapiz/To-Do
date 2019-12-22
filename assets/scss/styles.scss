@@ -10,6 +10,7 @@ body,
 html {
   background: #ededed;
   height: 100%;
+  overflow: hidden;
 }
 
 *,
@@ -64,6 +65,8 @@ h1 {
 }
 
 #menu {
+  height: 100%;
+  overflow: auto;
   .header {
     background: url("https://static.pexels.com/photos/9754/mountains-clouds-forest-fog.jpg") center center;
     background-repeat: no-repeat;
@@ -101,16 +104,15 @@ h1 {
             top: -24px;
             left: 57px;
           }
-
         }
       }
     }
 
-    .add-cirlce {
+    .add-circle {
       background: $darkblue;
       border-radius: 50%;
       position: absolute;
-      right: 105px;
+      right: 50px;
       top: 125px;
       padding: 10px 14px;
 
@@ -120,44 +122,113 @@ h1 {
       }
     }
   }
-}
 
-.content-area {
-  width: 100%;
+  .content-area {
+    width: 100%;
 
-  .task-container {
-    margin: 40px 0;
+    .task-container {
+      margin: 40px 0;
 
-    .task-box {
-      padding: 20px;
-      border-bottom: 2px solid #d1d1d1;
-      margin: 20px 0 20px 0;
-      background: $white;
-      position: relative;
+      .task-box {
+        padding: 20px;
+        border-bottom: 2px solid #d1d1d1;
+        margin: 20px 0;
+        background: $white;
+        position: relative;
 
-      .title {
-        color: black;
-        margin: 0 0 15px 0;
-        font-size: 24px;
+        .title {
+          color: black;
+          margin: 0 0 15px;
+          font-size: 24px;
+        }
 
+        .date {
+          color: $darkblue;
+          font-size: 14px;
+        }
+
+        .checkbox {
+          padding: 5px;
+          border-radius: 10px;
+          border: 3px solid $darkblue;
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
       }
-      .date{
-        color: $darkblue;
-        font-size: 14px;
-
+    }
+  }
+  .task-form{
+    background: $darkblue;
+    position: absolute;
+    z-index: 100;
+    top:0;
+    bottom:0;
+    width: 100%;
+    color: $white;
+    padding: 50px 0;
+    transform: translate(0, 100%);
+    transition: all .6s ease-in-out;
+    &.active{
+      transform: translate(0, 0);
+    }
+    .close-btn{
+      position: absolute;
+      top:35px;
+      right: 35px;
+      padding: 15px;
+      cursor: pointer;
+      .fa{
+        font-size: 36px;
       }
-      .checkbox{
-        padding: 5px;
-        border-radius: 10px;
-        border: 3px solid $darkblue;
-        display: inline-block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        .fa{
-        font-size: 25px;
+    }
+    form{
+      display:block;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 15px;
+    }
+    h3{
+      margin: 50px 0;
+      font-size: 36px;
+      text-align: center;
+    }
+    .form-group{
+      margin-bottom: 20px;
+    }
+    label{
+      font-family: 'Roboto',cursive;
+      font-weight: 300;
+      font-size: 24px;
+      display: block;
+      text-transform: capitalize;
+      margin: 0 0 15px 0;
+    }
+    input[type="text"], textarea{
+      width: 100%;
+      background: rgba(255,255,255, .1);
+      border: none;
+      border-bottom: 3px solid rgba(255,255,255, .7);
+      font-family: 'Roboto',cursive;
+      font-weight: 300;
+      font-size: 36px;
+      color: $white;
+      &:focus{
+        outline: none;
       }
-      }
+    }
+    textarea{
+      height: 150px;
+    }
+    button{
+      background: $lightblue;
+      border: none;
+      width: 100%;
+      font-size: 16px;
+      text-transform: capitalize;
+      color: $white;
+      padding: 15px 20px;
     }
   }
 }
@@ -166,5 +237,6 @@ h1 {
   display: block;
   width: 100%;
   max-width: 1200px;
-  margin:0 auto;
+  margin: 0 auto;
+  padding: 0 15px;
 }

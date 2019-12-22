@@ -11,8 +11,8 @@
 </head>
 
 <body>
-  <section id="menu">
-    <div class="header">
+  <div id="menu">
+    <section class="header">
       <div class="top">
         <div class="logo">
           Task Manager
@@ -21,45 +21,72 @@
           <div class="tasks"><span class="number">12</span>Tasks</div>
           <div class="tasks"><span class="number">5</span>Completed</div>
         </div>
-        <div class="add-cirlce">
+        <div class="add-circle">
           <i class="fa fa-plus-circle"></i>
         </div>
       </div>
-    </div>
-
-
-  </section>
-
-  <section class="content-area">
-    <div class="container">
-      <div class="task-container">
-        <div class="task-box">
-          <div class="title">
-           Job Interview
+    </section>
+    <section class="content-area">
+      <div class="container">
+        <div class="task-container">
+          <div class="task-box">
+            <div class="title">
+              Job Interview
+            </div>
+            <div class="date">
+              Created: December 20 2019
+            </div>
           </div>
-          <div class="date">
-          Created:  December 20 2019
-          </div>
-
-        </div>
-        <div class="task-box">
-          <div class="title">
-            HAPPY BDAY
-          </div>
-          <div class="date">
-          Created:  December 20 2019
-          </div>
-          <div class="checkbox">
-            <i class="fa fa-check"></i>
+          <div class="task-box">
+            <div class="title">
+              HAPPY BDAY
+            </div>
+            <div class="date">
+              Created: December 20 2019
+            </div>
+            <div class="checkbox">
+              <i class="fa fa-check"></i>
+            </div>
           </div>
         </div>
+
       </div>
-
+    </section>
+    <section class="task-form">
+      <div class="close-btn">
+        <i class="fa fa-times"></i>
+      </div>
+      <form>
+        <h3>Add New Task:</h3>
+        <div class="form-group">
+        <label for="title">Task:</label>
+        <input type="text" name="title">
+      </div>
+      <div class="form-group">
+      <label for="title">Catagory:</label>
+      <input type="text" name="title">
     </div>
-
-
-  </section>
-
+    <div class="form-group">
+    <label for="title">Notes:</label>
+    <textarea name="notes"></textarea>
+  </div>
+  <div class="form-group">
+  <button type="submit">Add New Task</button
+</div>
+      </form>
+    </section>
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      $(".add-circle").on("click", function() {
+        $(".task-form").addClass("active")
+      })
+      $(".task-form .close-btn").on("click", function() {
+        $(".task-form").removeClass("active")
+    })
+  })
+  </script>
 </body>
 
 </html>
